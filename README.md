@@ -13,11 +13,14 @@ from tokenizers import BPETokenizer
 # Load a BPE Model
 vocab = "./hf-models/brx-bpe-tokenizer-vocab.json"
 merges = "./hf-models/brx-bpe-tokenizer-merges.txt"
-#vocab_wp="./hf-models/brx-word-piece-tokenizer-vocab.txt"
 tokenizer = BPETokenizer(vocab, merges)
 
 # And then encode:
-encoded = tokenizer_wp.encode("साबद्राय बावबायसो। नों रेदि खुरनानैलʼ दोनखादों आं थांगासिनो दं ।")
+encoded = tokenizer.encode("साबद्राय बावबायसो। नों रेदि खुरनानैलʼ दोनखादों आं थांगासिनो दं ।")
 print(encoded.ids)
+[13173, 11108, 1309, 241, 9268, 7661, 272, 25759, 219, 6576, 323, 192]
+
 print(encoded.tokens)
+['▁साबद्राय', '▁बावबाय', 'सो।', '▁नों', '▁रेदि', '▁खुरनानै', 'लʼ', '▁दोनखादों', '▁आं', '▁थांगासिनो', '▁दं', '▁।']
+
 ```
