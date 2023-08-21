@@ -24,3 +24,18 @@ print(encoded.tokens)
 ['▁साबद्राय', '▁बावबाय', 'सो।', '▁नों', '▁रेदि', '▁खुरनानै', 'लʼ', '▁दोनखादों', '▁आं', '▁थांगासिनो', '▁दं', '▁।']
 
 ```
+
+```
+# For new tokenizers
+
+from tokenizers import Tokenizer
+from tokenizers.models import BPE
+
+vocab = "./hf-models/brx-bpe-tokenizer-vocab.json"
+merges = "./hf-models/brx-bpe-tokenizer-merges.txt"
+tokenizer = Tokenizer(BPE(vocab=vocab, merges=merges))
+encoded = tokenizer.encode("साबद्राय बावबायसो। नों रेदि खुरनानैलʼ दोनखादों आं थांगासिनो दं ।")
+print(encoded.ids)
+
+print(encoded.tokens)
+```
