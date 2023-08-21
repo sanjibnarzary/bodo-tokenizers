@@ -36,6 +36,7 @@ merges = "./hf-models/brx-bpe-tokenizer-merges.txt"
 tokenizer = Tokenizer(BPE(vocab=vocab, merges=merges))
 encoded = tokenizer.encode("साबद्राय बावबायसो। नों रेदि खुरनानैलʼ दोनखादों आं थांगासिनो दं ।")
 print(encoded.ids)
-
+[17205, 481, 367, 300, 127, 360, 436, 315, 2078, 760, 429, 620, 271, 375, 350, 353, 584, 355, 607, 127]
 print(encoded.tokens)
+['साबद्राय', 'बाव', 'बाय', 'सो', '।', 'नों', 'रे', 'दि', 'खुर', 'नानै', 'लʼ', 'दोन', 'खा', 'दों', 'आं', 'थां', 'गासि', 'नो', 'दं', '।']
 ```
